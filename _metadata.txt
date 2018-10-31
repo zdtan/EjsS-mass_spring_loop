@@ -7,16 +7,16 @@ preferred-width: 1024
 preferred-height: 768
 author-image: MassSpringGravityLoop/WC_logo.png;./MassSpringGravityLoop/PacoEsquembre2011.png;./MassSpringGravityLoop/ScienceSamuraiDarrenTanSquareSmall.png
 main-script: 
-main-simulation: MassAndSpringGravity_Simulation.xhtml
+main-simulation: MassAndSpringStringGravity_Simulation.xhtml
 available-languages: 
-html-description: MassAndSpringGravity_Intro_2.html
-html-description: MassAndSpringGravity_Intro_1.html
-html-contents: MassAndSpringGravity_Contents.xhtml
-html-main: MassAndSpringGravity.xhtml
+html-description: MassAndSpringStringGravity_Intro_2.html
+html-description: MassAndSpringStringGravity_Intro_1.html
+html-contents: MassAndSpringStringGravity_Contents.xhtml
+html-main: MassAndSpringStringGravity.xhtml
 page-title: Introduction
-page-index: MassAndSpringGravity_Intro_1.html
+page-index: MassAndSpringStringGravity_Intro_1.html
 page-title: Activities
-page-index: MassAndSpringGravity_Intro_2.html
+page-index: MassAndSpringStringGravity_Intro_2.html
 page-title: Mass and Spring in Gravity
 page-index: index.html
 resource: MassSpringGravityLoop/PacoEsquembre2011.png

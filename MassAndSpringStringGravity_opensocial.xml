@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="MassAndSpringStringGravity"
+author="Wolfgang Christian; Francisco Esquembre; Zhiming Darren TAN"
+description="A mass is situated at the end of a spring whose other end is fixed. The motion is restricted to two spatial dimensions in a vertical plane, and gravity can be switched off. Simulation adapted by ZDT based on the "mass and spring" simulation by WC and FE."
+screenshot="./MassSpringGravityLoop/screenshot-small.png"
+thumbnail="./MassSpringGravityLoop/screenshot-small.png">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="index.html"/>
+</Module>
