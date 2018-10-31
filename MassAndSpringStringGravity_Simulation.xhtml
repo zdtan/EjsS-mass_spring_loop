@@ -818,6 +818,10 @@ var _stringProperties = {};
           _view.text.linkProperty("X",  function() { return x+vx; } ); // HtmlView Page linking property 'X' for element 'text'
           _view.text.linkProperty("Y",  function() { return y+vy; } ); // HtmlView Page linking property 'Y' for element 'text'
           _view.text.linkProperty("Visibility",  function() { return _isPaused; } ); // HtmlView Page linking property 'Visibility' for element 'text'
+          _view.dottedCircle.linkProperty("SizeX",  function() { return 2*L0; } ); // HtmlView Page linking property 'SizeX' for element 'dottedCircle'
+          _view.dottedCircle.linkProperty("X",  function() { return x1; }, function(_v) { x1 = _v; } ); // HtmlView Page linking property 'X' for element 'dottedCircle'
+          _view.dottedCircle.linkProperty("Y",  function() { return y1; }, function(_v) { y1 = _v; } ); // HtmlView Page linking property 'Y' for element 'dottedCircle'
+          _view.dottedCircle.linkProperty("SizeY",  function() { return 2*L0; } ); // HtmlView Page linking property 'SizeY' for element 'dottedCircle'
           _view.arrowY.linkProperty("Visibility",  function() { return _isPaused; } ); // HtmlView Page linking property 'Visibility' for element 'arrowY'
           _view.arrowX.linkProperty("Visibility",  function() { return _isPaused; } ); // HtmlView Page linking property 'Visibility' for element 'arrowX'
           _view.xTrail.linkProperty("InputX",  function() { return t; }, function(_v) { t = _v; } ); // HtmlView Page linking property 'InputX' for element 'xTrail'
@@ -982,6 +986,14 @@ function MassAndSpringStringGravity_View_0 (_topFrame) {
     _view._9(EJSS_DRAWING2D.text,"text", _view.drawingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'text'
       .setProperty("RelativePosition","NORTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'text'
       .setProperty("Text","Drag me") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'text'
+      ;
+
+    _view._9(EJSS_DRAWING2D.shape,"dottedCircle", _view.drawingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'dottedCircle'
+      .setProperty("ShapeType","ELLIPSE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'dottedCircle'
+      .setProperty("LineColor","Blue") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'dottedCircle'
+      .setProperty("Attributes",{ "stroke-dasharray":"8 8 8 8" }) // EJsS HtmlView.HtmlView Page: setting property 'Attributes' for element 'dottedCircle'
+      .setProperty("DrawLines",true) // EJsS HtmlView.HtmlView Page: setting property 'DrawLines' for element 'dottedCircle'
+      .setProperty("DrawFill",false) // EJsS HtmlView.HtmlView Page: setting property 'DrawFill' for element 'dottedCircle'
       ;
 
     _view._9(EJSS_DRAWING2D.arrow,"arrowY", _view.drawingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'arrowY'
