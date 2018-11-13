@@ -418,23 +418,25 @@ var _stringProperties = {};
     Dy=y-y1;  // > FixedRelations.FixedRel:2
     L=Math.sqrt(Dx*Dx+Dy*Dy);  // > FixedRelations.FixedRel:3
     T=0.5*m*(vx*vx+vy*vy);  // > FixedRelations.FixedRel:4
-    V=0.5*k*(L-L0)*(L-L0);  // > FixedRelations.FixedRel:5
-    U=m*g*y;  // > FixedRelations.FixedRel:6
-    E=T+V+U;  // > FixedRelations.FixedRel:7
-    //figure out x-component of spring force acting due to x1 on x  // > FixedRelations.FixedRel:8
-    if (string && L<L0) {  // > FixedRelations.FixedRel:9
+    U=m*g*y;  // > FixedRelations.FixedRel:5
+    //figure out x-component of spring force acting due to x1 on x  // > FixedRelations.FixedRel:6
+    //also elastic potential energy  // > FixedRelations.FixedRel:7
+    if (string && L<L0) {  // > FixedRelations.FixedRel:8
+        V = 0;  // > FixedRelations.FixedRel:9
         Fx = 0;  // > FixedRelations.FixedRel:10
         Fy = -m*g;  // > FixedRelations.FixedRel:11
         showSpring = false;  // > FixedRelations.FixedRel:12
     } else {   // > FixedRelations.FixedRel:13
-        Fx = -k*(L-L0)*Dx/L-b*(vx);  // > FixedRelations.FixedRel:14
-        Fy = -k*(L-L0)*Dy/L-b*(vy)-m*g;  // > FixedRelations.FixedRel:15
-        showSpring = true;  // > FixedRelations.FixedRel:16
-    }  // > FixedRelations.FixedRel:17
-    //calculate angles  // > FixedRelations.FixedRel:18
-    theta=Math.atan(Dx/Dy);  // > FixedRelations.FixedRel:19
-    omega=(Dy*vx-vy*Dx)/(L*L);  // > FixedRelations.FixedRel:20
-    //omega=(vx*Math.cos(theta)+vy*Math.sin(theta))/L;  // > FixedRelations.FixedRel:21
+        V = 0.5*k*(L-L0)*(L-L0);  // > FixedRelations.FixedRel:14
+        Fx = -k*(L-L0)*Dx/L-b*(vx);  // > FixedRelations.FixedRel:15
+        Fy = -k*(L-L0)*Dy/L-b*(vy)-m*g;  // > FixedRelations.FixedRel:16
+        showSpring = true;  // > FixedRelations.FixedRel:17
+    }  // > FixedRelations.FixedRel:18
+    E=T+V+U;  // > FixedRelations.FixedRel:19
+    //calculate angles  // > FixedRelations.FixedRel:20
+    theta=Math.atan(Dx/Dy);  // > FixedRelations.FixedRel:21
+    omega=(Dy*vx-vy*Dx)/(L*L);  // > FixedRelations.FixedRel:22
+    //omega=(vx*Math.cos(theta)+vy*Math.sin(theta))/L;  // > FixedRelations.FixedRel:23
   });
 
   _model.addToFixedRelations(function() { _isPaused = _model.isPaused(); _isPlaying = _model.isPlaying(); });
@@ -1021,6 +1023,7 @@ function MassAndSpringStringGravity_View_0 (_topFrame) {
     _view._9(EJSS_DRAWING2D.plottingPanel,"plottingPanel", _view.panel) // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanel'
       .setProperty("Height",250) // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'plottingPanel'
       .setProperty("Width","100%") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'plottingPanel'
+      .setProperty("TRMessage","linear coordinates \n thin: horizontal \n thick: vertical") // EJsS HtmlView.HtmlView Page: setting property 'TRMessage' for element 'plottingPanel'
       .setProperty("Gutters",[0,0,0,0]) // EJsS HtmlView.HtmlView Page: setting property 'Gutters' for element 'plottingPanel'
       .setProperty("MinimumX",0) // EJsS HtmlView.HtmlView Page: setting property 'MinimumX' for element 'plottingPanel'
       .setProperty("TitleY","Position") // EJsS HtmlView.HtmlView Page: setting property 'TitleY' for element 'plottingPanel'
@@ -1028,7 +1031,6 @@ function MassAndSpringStringGravity_View_0 (_topFrame) {
       .setProperty("TitleX","Time") // EJsS HtmlView.HtmlView Page: setting property 'TitleX' for element 'plottingPanel'
       .setProperty("AutoScaleX",false) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'plottingPanel'
       .setProperty("Title","") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel'
-      .setProperty("TLMessage","thin: horizontal \n thick: vertical") // EJsS HtmlView.HtmlView Page: setting property 'TLMessage' for element 'plottingPanel'
       .setProperty("Display","block") // EJsS HtmlView.HtmlView Page: setting property 'Display' for element 'plottingPanel'
       .setProperty("MaximumX",20) // EJsS HtmlView.HtmlView Page: setting property 'MaximumX' for element 'plottingPanel'
       ;
@@ -1073,6 +1075,7 @@ function MassAndSpringStringGravity_View_0 (_topFrame) {
     _view._9(EJSS_DRAWING2D.plottingPanel,"plottingPanelPosAng", _view.panelAngular) // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanelPosAng'
       .setProperty("Height",250) // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'plottingPanelPosAng'
       .setProperty("Width","100%") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'plottingPanelPosAng'
+      .setProperty("TRMessage","angular coordinates") // EJsS HtmlView.HtmlView Page: setting property 'TRMessage' for element 'plottingPanelPosAng'
       .setProperty("Gutters",[0,0,0,0]) // EJsS HtmlView.HtmlView Page: setting property 'Gutters' for element 'plottingPanelPosAng'
       .setProperty("MinimumX",0) // EJsS HtmlView.HtmlView Page: setting property 'MinimumX' for element 'plottingPanelPosAng'
       .setProperty("TitleY","Angle (theta)") // EJsS HtmlView.HtmlView Page: setting property 'TitleY' for element 'plottingPanelPosAng'
@@ -1080,7 +1083,6 @@ function MassAndSpringStringGravity_View_0 (_topFrame) {
       .setProperty("TitleX","Time") // EJsS HtmlView.HtmlView Page: setting property 'TitleX' for element 'plottingPanelPosAng'
       .setProperty("AutoScaleX",false) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'plottingPanelPosAng'
       .setProperty("Title","") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanelPosAng'
-      .setProperty("TLMessage","polar coordinates") // EJsS HtmlView.HtmlView Page: setting property 'TLMessage' for element 'plottingPanelPosAng'
       .setProperty("Display","block") // EJsS HtmlView.HtmlView Page: setting property 'Display' for element 'plottingPanelPosAng'
       .setProperty("MaximumX",20) // EJsS HtmlView.HtmlView Page: setting property 'MaximumX' for element 'plottingPanelPosAng'
       ;
@@ -1187,6 +1189,7 @@ function MassAndSpringStringGravity_View_0 (_topFrame) {
     _view._9(EJSS_DRAWING2D.plottingPanel,"EnergyPlottingPanel", _view.panelEnergy) // EJsS HtmlView.HtmlView Page: declaration of element 'EnergyPlottingPanel'
       .setProperty("Height",350) // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'EnergyPlottingPanel'
       .setProperty("Width","100%") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'EnergyPlottingPanel'
+      .setProperty("TRMessage","black (thick): total energy \n black (thin): elastic pot. \n red: grav. pot. \n blue: kinetic energy") // EJsS HtmlView.HtmlView Page: setting property 'TRMessage' for element 'EnergyPlottingPanel'
       .setProperty("MinimumX",0) // EJsS HtmlView.HtmlView Page: setting property 'MinimumX' for element 'EnergyPlottingPanel'
       .setProperty("TitleY","Energy") // EJsS HtmlView.HtmlView Page: setting property 'TitleY' for element 'EnergyPlottingPanel'
       .setProperty("TitleX","Time") // EJsS HtmlView.HtmlView Page: setting property 'TitleX' for element 'EnergyPlottingPanel'
@@ -1194,7 +1197,6 @@ function MassAndSpringStringGravity_View_0 (_topFrame) {
       .setProperty("AutoScaleX",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'EnergyPlottingPanel'
       .setProperty("Title","Energy against Time") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'EnergyPlottingPanel'
       .setProperty("TitleFont","normal bold 12px ") // EJsS HtmlView.HtmlView Page: setting property 'TitleFont' for element 'EnergyPlottingPanel'
-      .setProperty("TLMessage","black (thick): total energy \n black (thin): elastic pot. \n red: grav. pot. \n blue: kinetic energy") // EJsS HtmlView.HtmlView Page: setting property 'TLMessage' for element 'EnergyPlottingPanel'
       .setProperty("MaximumX",20) // EJsS HtmlView.HtmlView Page: setting property 'MaximumX' for element 'EnergyPlottingPanel'
       .setProperty("Display","inline-block") // EJsS HtmlView.HtmlView Page: setting property 'Display' for element 'EnergyPlottingPanel'
       ;
